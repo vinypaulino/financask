@@ -6,16 +6,13 @@ import java.util.Calendar
 /**
  * Created by vinicius on 12/04/18.
  */
-class Transacao (valor : BigDecimal,
-                 categoria : String,
-                 data : Calendar
+class Transacao (val valor : BigDecimal,
+                 val categoria : String = "Indefinida",
+                 val tipo: Tipo,
+                 val data : Calendar = Calendar.getInstance()){
 
-    ) {
-    val valor: BigDecimal = valor
-    val categoria: String = categoria
-    val data: Calendar = data
-
-
-
-
+    constructor(valor: BigDecimal, tipo: Tipo) : this(valor, "Indefinida", tipo)
 }
+
+
+
