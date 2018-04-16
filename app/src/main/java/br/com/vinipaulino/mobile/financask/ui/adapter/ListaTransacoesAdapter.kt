@@ -37,10 +37,8 @@ class ListaTransacoesAdapter(transacoes: List<Transacao>,
             viewCriada.transacao_icone.setBackgroundResource(R.drawable.icone_transacao_item_despesa)
         }
 
-        val formatoBrasileiro = DecimalFormat.getCurrencyInstance(Locale("pt", "br"))
-        val moedaFormatada = formatoBrasileiro.format(transacao.valor)
 
-        viewCriada.transacao_valor.text = moedaFormatada
+        viewCriada.transacao_valor.text = transacao.valor.formataParaBrasileiro()
         viewCriada.transacao_categoria.text = transacao.categoria
         viewCriada.transacao_data.text = transacao.data.formataParaBrasileiro()
 
